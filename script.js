@@ -101,6 +101,12 @@ const projects = [
   { name: "Time Series Transformer", category: "时间序列", level: "挑战", intro: "使用 Transformer 结构处理时间序列预测任务，可比较传统模型、LSTM 和注意力模型的误差。", link: "https://huggingface.co/docs/transformers/model_doc/time_series_transformer" }
 ];
 
+const scoreByLevel = {
+  "基础": 70,
+  "中等": 85,
+  "挑战": 100
+};
+
 const grid = document.querySelector("#project-grid");
 const searchInput = document.querySelector("#search-input");
 const categoryFilter = document.querySelector("#category-filter");
@@ -125,7 +131,8 @@ function renderProjects() {
   const level = levelFilter.value;
 
   const visibleProjects = projects.filter((project) => {
-    const text = `${project.name} ${project.category} ${project.level} ${project.intro}`.toLowerCase();
+    const score = scoreByLevel[project.level] || "";
+    const text = `${project.name} ${project.category} ${project.level} ${score}分 ${project.intro}`.toLowerCase();
     const matchesKeyword = !keyword || text.includes(keyword);
     const matchesCategory = category === "all" || project.category === category;
     const matchesLevel = level === "all" || project.level === level;
@@ -140,6 +147,7 @@ function renderProjects() {
       <div class="project-meta">
         <span>${project.category}</span>
         <span>${project.level}</span>
+        <span class="score-chip">${scoreByLevel[project.level]} 分</span>
       </div>
       <p>${project.intro}</p>
       <a class="code-link" href="${project.link}" target="_blank" rel="noopener noreferrer">代码链接</a>
