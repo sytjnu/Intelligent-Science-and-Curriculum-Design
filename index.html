@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>智能科学课程设计 | Intelligent Science Course Design</title>
+  <meta name="description" content="天津师范大学人工智能学院智能科学课程设计项目库：100 个 AI 算法实现选题、代码链接、完成流程与统一提交规范。">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="返回顶部">
+      <span class="brand-mark" aria-hidden="true">AI</span>
+      <span>
+        <strong>智能科学课程设计</strong>
+        <small>Intelligent Science Course Design</small>
+      </span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#projects">项目清单</a>
+      <a href="#workflow">完成流程</a>
+      <a href="#submission">提交规范</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">天津师范大学人工智能学院</p>
+        <h1>智能科学课程设计项目库</h1>
+        <p class="intro">围绕机器学习、深度学习、自然语言处理、计算机视觉、强化学习、图学习、推荐系统与时间序列等方向，选取 100 个适合课程设计的人工智能算法实现项目。</p>
+        <div class="hero-stats" aria-label="课程项目概览">
+          <div><strong id="total-count">100</strong><span>个算法项目</span></div>
+          <div><strong>8</strong><span>个技术方向</span></div>
+          <div><strong>1</strong><span>份统一提交规范</span></div>
+        </div>
+      </div>
+      <div class="visual-board" aria-label="人工智能算法方向图">
+        <div class="board-head">
+          <span>AI Project Map</span>
+          <strong>TJNU</strong>
+        </div>
+        <div class="node-map" aria-hidden="true">
+          <span class="node n1">ML</span>
+          <span class="node n2">CV</span>
+          <span class="node n3">NLP</span>
+          <span class="node n4">RL</span>
+          <span class="node n5">Graph</span>
+          <span class="node n6">RecSys</span>
+          <span class="link l1"></span>
+          <span class="link l2"></span>
+          <span class="link l3"></span>
+          <span class="link l4"></span>
+        </div>
+        <p>从可复现实验出发，逐步完成模型设计、评估、分析与报告。</p>
+      </div>
+    </section>
+
+    <section id="projects" class="section-block" aria-labelledby="projects-title">
+      <div class="section-heading">
+        <p class="eyebrow">Project Bank</p>
+        <h2 id="projects-title">100 个人工智能算法实现项目</h2>
+        <p>每个项目以项目名称开头，包含中文简介和代码链接。学生可选择其中一个方向深入完成，也可在教师允许下组合多个算法进行对比研究。</p>
+      </div>
+
+      <div class="toolbar" aria-label="项目筛选">
+        <label>
+          <span>关键词</span>
+          <input id="search-input" type="search" placeholder="搜索算法、方向或关键词">
+        </label>
+        <label>
+          <span>方向</span>
+          <select id="category-filter">
+            <option value="all">全部方向</option>
+          </select>
+        </label>
+        <label>
+          <span>难度</span>
+          <select id="level-filter">
+            <option value="all">全部难度</option>
+            <option value="基础">基础</option>
+            <option value="中等">中等</option>
+            <option value="挑战">挑战</option>
+          </select>
+        </label>
+        <div class="result-count" aria-live="polite"><strong id="visible-count">100</strong><span>个项目</span></div>
+      </div>
+
+      <div id="project-grid" class="project-grid" aria-live="polite"></div>
+    </section>
+
+    <section id="workflow" class="section-block split-section" aria-labelledby="workflow-title">
+      <div class="section-heading">
+        <p class="eyebrow">Workflow</p>
+        <h2 id="workflow-title">课程设计完成流程</h2>
+        <p>建议按完整科研与工程流程完成，而不是只跑通一段代码。</p>
+      </div>
+      <div class="workflow-list">
+        <article><span>01</span><h3>熟悉计算平台</h3><p>确认 Python、Conda、CUDA、PyTorch、TensorFlow、scikit-learn 等环境版本，记录显卡、CPU、内存和系统信息。</p></article>
+        <article><span>02</span><h3>下载数据</h3><p>选择公开数据集或教师指定数据集，说明数据来源、样本数量、类别分布、训练/验证/测试划分方式。</p></article>
+        <article><span>03</span><h3>建立基线</h3><p>先复现实例代码或简单 baseline，确保数据读取、训练、评估和结果保存流程完整可运行。</p></article>
+        <article><span>04</span><h3>设计模型</h3><p>说明算法原理、模型结构、输入输出、损失函数、优化器、关键超参数和设计理由。</p></article>
+        <article><span>05</span><h3>定量评估</h3><p>根据任务类型给出 Accuracy、Precision、Recall、F1、AUC、mAP、IoU、BLEU、RMSE、MAE 等指标，并与 baseline 对比。</p></article>
+        <article><span>06</span><h3>定性分析</h3><p>展示预测样例、可视化结果、错误样本、聚类图、热力图、注意力图或生成结果，解释模型学到了什么。</p></article>
+        <article><span>07</span><h3>消融实验</h3><p>去掉关键模块、替换特征、改变损失函数或关闭增强策略，比较性能变化，说明每个组件的贡献。</p></article>
+        <article><span>08</span><h3>参数敏感性</h3><p>改变学习率、batch size、网络深度、K 值、正则化强度、阈值等参数，分析模型对超参数的敏感程度。</p></article>
+        <article><span>09</span><h3>失败案例</h3><p>选择若干失败样本，分析原因可能来自数据噪声、类别不平衡、模型容量不足、过拟合、欠拟合或任务边界模糊。</p></article>
+        <article><span>10</span><h3>整理报告</h3><p>报告应包含项目背景、算法原理、数据说明、实验设置、结果表格、结果图、分析讨论、运行说明和参考链接。</p></article>
+      </div>
+    </section>
+
+    <section id="submission" class="section-block submission-block" aria-labelledby="submission-title">
+      <div>
+        <p class="eyebrow">Submission</p>
+        <h2 id="submission-title">统一提交命名</h2>
+        <p>学生完成上机任务后，将全部代码、报告、结果图和必要运行说明压缩为一个文件，命名为：</p>
+        <p class="filename-rule">姓名+学号.zip</p>
+        <p>例如：<strong>张三2025123456.zip</strong>。请提交给学委，由学委按班级统一打包后发送给任课老师。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>天津师范大学人工智能学院 · 智能科学课程设计</span>
+    <span>Intelligent Science Course Design</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
